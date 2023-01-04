@@ -1,38 +1,214 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+body {
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+input[type="number"] {
+  appearance: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+input {
+  font-family: inherit;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+input {
+  border-style: solid;
+  border-width: 1px;
+}
+
+textarea {
+  border-color: #eee;
+  border-width: 1px;
+}
+label,textarea,input {
+  width: 100%;
+  display: block;
+}
+
+.ccMain {
+  display: flex;
+  font-family: "Space Grotesk";
+  color: hsl(279, 6%, 55%);
+  letter-spacing: 0.14em;
+}
+.ccMain label {
+  display: flex;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.ccMain input{
+  color: hsl(278, 3%, 87%);
+
+}
+.ccMain input::placeholder {
+  display:flex;
+  padding: 11px;
+
+  color: hsl(278, 68%, 11%);
+  font-size: 16px;
+  letter-spacing: 2px;
+
+  border-color: hsl(270, 3%, 87%);
+  border-radius: 8px;
+}
+
+.ccForm input::placeholder {
+  color: hsl(270, 3%, 87%);
+}
+
+
+.ccLeftSide {
+  display: block;
+}
+.ccFrontSide,.ccBackSide{
+  position:relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 20px 50px #0003;
+  border-radius: 9px;
+  width: 447px;
+  height: 245px;
+}
+.ccFrontNumber{
+  position: absolute;
+  left: 81px;
+  top: 110px;
+  color: #fff;
+  font-size: 20px ;
+  letter-spacing: 4px;
+
+}
+.ccFrontDate{
+  position: absolute;
+  left: 358px;
+  height: 129px;
+  top: 210px;
+  color: #fff;
+  font-size: 12px ;
+}
+.ccFrontSide{
+background-image: url('./images/bg-card-front.png');  
+left: 30.4%;
+
+
+
+}
+.ccFrontName {
+  text-transform: uppercase;
+}
+.ccFrontName{
+  position: absolute;
+  left: 27px;
+  height: 180px;
+  top:210px;
+  color: hsl(270, 3%, 87%);
+  font-size: 12px;
+}
+
+.ccBackSide{
+  position: relative;
+  background-image: url('./images/bg-card-back.png');
+  left: 240px;
+  top: 370px;
+
+}
+.ccBackCvc{  
+  position: relative ;
+  left: 350px;
+  height: 180px;
+  top: 110px;  
+}
+
+.ccLeftSide {
+  width: 38.54%;   
+}
+
+.ccLeftSide {
+  background-image: url("./images/bg-main-desktop.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.ccFrontSide,.ccBackSide {
+  box-shadow: 0 30px 70px #000b;
+}
+
+.ccFrontSide {
+  right: -9.167vw;
+  top: 100px;
+}
+.ccBackSide {
+  right: -17.8vw;
+  top: 150px;
+}
+
+.ccRightSide {
+  display: flex;
+}
+.ccForm {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-self: center;
+}
+
+.ccForm label {
+  display: flex;
+}
+.ccInputRow {
+  display: flex;
+  direction: column;
+  gap: 10px;
+  flex-basis: 100%;
+}
+.ccInputDateGroup {
+  display: flex;
+}
+.ccnnputCvcGroup {
+  display: flex;
+  flex-direction: column;
+}
+.ccMain button{
+  display: block;
+  width: 100%;
+  font-weight: 1px;
+  letter-spacing: 2px;
+  padding: 11px;
   color: white;
+  background-color: hsl(278, 68%, 11%);
+  border: 0;
+  border-radius: 29px;
 }
 
-.App-link {
-  color: #61dafb;
+@media (max-width: 375px) {
+  .ccLeftSide {
+    background-image: url("./images/bg-main-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@media (min-width: 376px) {
+  .ccMain {
+    min-height: 100vh;
   }
-  to {
-    transform: rotate(360deg);
+  .ccLeftSide {
+    width: 33, 3333333%;
   }
-}
+  .ccLeftSide {
+    background-image: url("./images/bg-main-desktop.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .ccRightSide {
+    justify-content: center;
+  }
+  .ccForm {
+    width: 380px;
+    padding-left: 120px;
+  }
+} 
