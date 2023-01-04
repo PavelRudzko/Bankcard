@@ -25,8 +25,8 @@ textarea {
   border-width: 1px;
 }
 label,textarea,input {
-  width: 100%;
-  display: block;
+  width:100%;
+  display: flexbox;
 }
 
 .ccMain {
@@ -42,12 +42,13 @@ label,textarea,input {
   letter-spacing: 2px;
 }
 .ccMain input{
-  color: hsl(278, 3%, 87%);
+  color: hsl(278, 68%, 11%);
 
 }
 .ccMain input::placeholder {
   display:flex;
   padding: 11px;
+  color: hsl(278, 3%, 87%);
 
   color: hsl(278, 68%, 11%);
   font-size: 16px;
@@ -76,10 +77,10 @@ label,textarea,input {
 }
 .ccFrontNumber{
   position: absolute;
-  left: 81px;
-  top: 110px;
+  left: 51px;
+  top: 150px;
   color: #fff;
-  font-size: 20px ;
+  font-size: 25px ;
   letter-spacing: 4px;
 
 }
@@ -93,7 +94,7 @@ label,textarea,input {
 }
 .ccFrontSide{
 background-image: url('./images/bg-card-front.png');  
-left: 30.4%;
+left: 12.0%;
 
 
 
@@ -181,10 +182,14 @@ left: 30.4%;
   color: white;
   background-color: hsl(278, 68%, 11%);
   border: 0;
-  border-radius: 29px;
+  border-radius: 11px;
+  font-family: Space+Grotesk;
 }
 
 @media (max-width: 375px) {
+  .ccMain{
+    flex-direction: column;
+  }
   .ccLeftSide {
     background-image: url("./images/bg-main-desktop.png");
     background-size: cover;
