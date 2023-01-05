@@ -84,9 +84,13 @@ function App() {
 
                     if (!number) {
                       setMonth("");
-                    } else if (number < 13) {
-                      setMonth(number);
+                    } else if (number < 10) {
+                      setMonth("0"+number);
                       setMonthError(false);
+
+                      
+
+                      
                     } else {
                       setMonthError(true);
                     }
