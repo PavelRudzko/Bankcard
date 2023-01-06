@@ -20,13 +20,27 @@ function App() {
           <div className="ccFrontNumber">
             {cardNumber || "1111 2222 3333 4444"}
           </div>
-       
-          <div className="CardLogo">
-<svg width="84" height="47" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="23.478" cy="23.5" rx="23.478" ry="23.5" fill="#fff"/><path d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z" stroke="#fff"/></svg>
-          
-          </div>
-       
 
+          <div className="CardLogo">
+            <svg
+              width="84"
+              height="47"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <ellipse
+                cx="23.478"
+                cy="23.5"
+                rx="23.478"
+                ry="23.5"
+                fill="#fff"
+              />
+              <path
+                d="M83.5 23.5c0 5.565-4.507 10.075-10.065 10.075-5.559 0-10.065-4.51-10.065-10.075 0-5.565 4.506-10.075 10.065-10.075 5.558 0 10.065 4.51 10.065 10.075Z"
+                stroke="#fff"
+              />
+            </svg>
+          </div>
 
           <div className="ccFrontDate">
             {month || "00"}/{year || "00"}
@@ -45,7 +59,7 @@ function App() {
             <input
               placeholder="e.g Pavel"
               value={name}
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setName(e.target.value.match(/^[a-zA-Z\s]*$/))}
             />
           </div>
 
@@ -71,7 +85,7 @@ function App() {
 
           <div>
             <div className="ccInputDateGroup">
-              <label>Expiration date (MM/YY)</label>
+              <label>Exp.date (MM/YY) </label>
               <div className="ccDateInputs">
                 <input
                   value={month}
@@ -84,13 +98,9 @@ function App() {
 
                     if (!number) {
                       setMonth("");
-                    } else if (number < 10) {
-                      setMonth("0"+number);
+                    } else if (number < 13) {
+                      setMonth("0" + number);
                       setMonthError(false);
-
-                      
-
-                      
                     } else {
                       setMonthError(true);
                     }
@@ -100,7 +110,8 @@ function App() {
                     // }
                   }}
                 />
-                {monthError && <div>Please enter valid month</div>}
+                {monthError && <div>"Please check
+                  month"</div>}
 
                 <input
                   placeholder="YY"
@@ -130,7 +141,7 @@ function App() {
                   }
                 }}
               />
-              {cvcError && <div>Can'tbeblank</div>}
+              {cvcError && <div>Can't be blank</div>}
             </div>
           </div>
 

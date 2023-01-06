@@ -24,9 +24,11 @@ textarea {
   border-color: #eee;
   border-width: 1px;
 }
-label,textarea,input {
-  width:100%;
-  display: flexbox;
+label,
+textarea,
+input {
+  width: 100%;
+  display: block;
 }
 
 .ccMain {
@@ -40,14 +42,14 @@ label,textarea,input {
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 2px;
+  flex-direction: row;
 }
-.ccMain input{
+.ccMain input {
   color: hsl(278, 68%, 11%);
-  display:flexbox;
-
+  display: flexbox;
 }
 .ccMain input::placeholder {
-  display:flex;
+  display: flex;
   padding: 11px;
   color: hsl(278, 3%, 87%);
 
@@ -63,12 +65,14 @@ label,textarea,input {
   color: hsl(270, 3%, 87%);
 }
 
-
 .ccLeftSide {
-  display: block;
+  display:block;
+  height: 100%;  
+  
 }
-.ccFrontSide,.ccBackSide{
-  position:relative;
+.ccFrontSide,
+.ccBackSide {
+  position: relative;
   background-size: cover;
   background-repeat: no-repeat;
   box-shadow: 0 20px 50px #0003;
@@ -76,73 +80,86 @@ label,textarea,input {
   width: 447px;
   height: 245px;
 }
-.ccFrontNumber{
+.ccFrontNumber {
   position: absolute;
   left: 51px;
   top: 150px;
   color: #fff;
-  font-size: 25px ;
+  font-size: 25px;
   letter-spacing: 4px;
-
 }
-.ccFrontDate{
+.ccFrontDate {
   position: absolute;
   left: 358px;
   height: 129px;
   top: 210px;
   color: #fff;
-  font-size: 12px ;
+  font-size: 12px;
 }
-.ccFrontSide{
-background-image: url('./images/bg-card-front.png');  
-left: 12.0%;
-
-
-
+.ccFrontSide {
+  background-image: url("./images/bg-card-front.png");
+  left: 12%;
 }
 .ccFrontName {
   text-transform: uppercase;
 }
-.ccFrontName{
+.ccFrontName {
   position: absolute;
   left: 27px;
   height: 180px;
-  top:210px;
+  top: 210px;
   color: hsl(270, 3%, 87%);
   font-size: 12px;
 }
-.CardLogo{
+.CardLogo {
   position: relative;
   left: 35px;
   top: 30px;
 }
 
-.ccBackSide{
+.ccBackSide {
   position: relative;
-  background-image: url('./images/bg-card-back.png');
+  background-image: url("./images/bg-card-back.png");
   left: 240px;
-  top: 370px;
-
+  top: 570px;
 }
-.ccBackCvc{  
-  position: relative ;
+.ccBackCvc {
+  position: relative;
   left: 350px;
   height: 180px;
-  top: 110px;  
+  top: 110px;
 }
 
 .ccLeftSide {
-  width: 38.54%;   
+  width: 38.54%;
+  
+  
 }
 
 .ccLeftSide {
   background-image: url("./images/bg-main-desktop.png");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat:no-repeat;
+  
 }
 
-.ccFrontSide,.ccBackSide {
+.ccFrontSide,
+.ccBackSide {
   box-shadow: 0 30px 70px #000b;
+}
+.ccInputCvcGroup {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+.ccInputDateGroup {
+  display: flex;
+  flex-direction: column;
+  width: 33%;
+}
+.ccDateInputs {
+  display: flex;
+  flex-direction: r;
 }
 
 .ccFrontSide {
@@ -150,7 +167,7 @@ left: 12.0%;
   top: 100px;
 }
 .ccBackSide {
-  right: -17.8vw;
+  /*right: -17.8vw;*/
   top: 150px;
 }
 
@@ -158,7 +175,7 @@ left: 12.0%;
   display: flex;
 }
 .ccForm {
-  display:inline-block;
+  display: inline-block;
   flex-direction: column;
   align-self: center;
 }
@@ -167,10 +184,9 @@ left: 12.0%;
   display: flex;
 }
 
-
 .ccInputRow {
   display: flex;
-  direction: column;
+  flex-direction: column;
   gap: 10px;
   flex-basis: 100%;
 }
@@ -181,21 +197,22 @@ left: 12.0%;
   display: flex;
   flex-direction: column;
 }
-.ccMain button{
+.ccMain button {
+  
   display: block;
   width: 100%;
   font-weight: 1px;
   letter-spacing: 2px;
-  padding: 11px;
+  padding: 10px;
   color: white;
   background-color: hsl(278, 68%, 11%);
   border: 0;
   border-radius: 11px;
-  font-family: Space+Grotesk;
+  font-family: Space + Grotesk;
 }
 
 @media (max-width: 375px) {
-  .ccMain{
+  .ccMain {
     flex-direction: column;
   }
   .ccLeftSide {
@@ -207,7 +224,8 @@ left: 12.0%;
 
 @media (min-width: 376px) {
   .ccMain {
-    min-height: 100vh;
+    min: height 100vh;;
+    
   }
   .ccLeftSide {
     width: 33, 3333333%;
@@ -224,4 +242,4 @@ left: 12.0%;
     width: 380px;
     padding-left: 90px;
   }
-} 
+}
