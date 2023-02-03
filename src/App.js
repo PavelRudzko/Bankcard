@@ -93,12 +93,11 @@ function App() {
                 <input
                   value={month}
                   placeholder="MM"
-                  //type= "number"
+                  
                   onChange={(e) => {
                     const number = Number.parseInt(e.target.value, 10);
 
-                    //alert('YOUR NUMBER: ' + number)
-
+                   
                     if (!number) {
                       setMonth("");
                     } else if (number < 13) {
@@ -158,45 +157,3 @@ function App() {
 }
 
 export default App;
-/* TO DO Check Credit Card 
-<script type="text/javascript">
-
-// Store the regexes as globals so they're cached and not re-parsed on every call:
-var visaPattern = /^(?:4[0-9]{12}(?:[0-9]{3})?)$/;
-var mastPattern = /^(?:5[1-5][0-9]{14})$/;
-var amexPattern = /^(?:3[47][0-9]{13})$/;
-var discPattern = /^(?:6(?:011|5[0-9][0-9])[0-9]{12})$/; 
-
-function validateCreditCardNumber() {
-
-    var ccNum  = document.getElementById("cardNum").value;
-
-    var isVisa = visaPattern.test( ccNum ) === true;
-    var isMast = mastPattern.test( ccNum ) === true;
-    var isAmex = amexPattern.test( ccNum ) === true;
-    var isDisc = discPattern.test( ccNum ) === true;
-
-    if( isVisa || isMast || isAmex || isDisc ) {
-        // at least one regex matches, so the card number is valid.
-
-        if( isVisa ) {
-            // Visa-specific logic goes here
-        }
-        else if( isMast ) {
-             // Mastercard-specific logic goes here
-        }
-        else if( isAmex ) {
-            // AMEX-specific logic goes here
-        }
-        else if( isDisc ) {
-            // Discover-specific logic goes here
-        }
-    }
-    else {
-        alert("Please enter a valid card number.");
-    }
-}
-
-</script>
-
-*/
