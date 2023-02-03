@@ -62,6 +62,7 @@ function App() {
               onChange={(e) => setName(e.target.value.match(/^[a-zA-Z\s]*$/))}
             />
           </div>
+          <br />
 
           <div className="ccInputRow">
             <label>Card number</label>
@@ -81,11 +82,13 @@ function App() {
                 }
               }}
             />
+
           </div>
+          <br />
 
           <div>
             <div className="ccInputDateGroup">
-              <label>Exp.date (MM/YY) </label>
+              <label> Exp.date(MM/YY) </label>
               <div className="ccDateInputs">
                 <input
                   value={month}
@@ -110,8 +113,8 @@ function App() {
                     // }
                   }}
                 />
-                {monthError && <div>"Please check
-                  month"</div>}
+                {monthError && <label>"Please check month"</label> 
+                }
 
                 <input
                   placeholder="YY"
@@ -120,31 +123,31 @@ function App() {
                   onChange={(e) => setYear(e.target.value.match(/^[0-9]*$/))}
                 />
               </div>
-            </div>
 
-            <div className="ccInputCvcGroup">
-              <label> CVC </label>
-              <input
-                value={cvcNumber}
-                placeholder="123"
-                maxLength="3"
-                onChange={(e) => {
-                  const cvcNumber = Number.parseInt(e.target.value, 10); //setCvcNumber(e.target.value.match(/^[0-9]*$/))}
 
-                  if (!cvcNumber) {
-                    setCvcNumber("");
-                  } else if (cvcNumber < 1000) {
-                    setCvcNumber(cvcNumber);
-                    setCvcError(false);
-                  } else {
-                    setCvcError(true);
-                  }
-                }}
-              />
-              {cvcError && <div>Can't be blank</div>}
+              <div className="ccInputCvcGroup">
+                <label> CVC </label>
+                <input
+                  value={cvcNumber}
+                  placeholder="123"
+                  maxLength="3"
+                  onChange={(e) => {
+                    const cvcNumber = Number.parseInt(e.target.value, 10); //setCvcNumber(e.target.value.match(/^[0-9]*$/))}
+
+                    if (!cvcNumber) {
+                      setCvcNumber("");
+                    } else if (cvcNumber < 1000) {
+                      setCvcNumber(cvcNumber);
+                      setCvcError(false);
+                    } else {
+                      setCvcError(true);
+                    }
+                  }}
+                />
+                {cvcError && <div>Can't be blank</div>}
+              </div>
             </div>
           </div>
-
           <div className="ccFormButton">
             <button>Confirm</button>
           </div>
